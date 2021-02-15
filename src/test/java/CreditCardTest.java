@@ -8,7 +8,7 @@ public class CreditCardTest {
 
     @Before
     public void before() {
-        creditCard = new CreditCard("1111222233334444", "12/23", 234, 100);
+        creditCard = new CreditCard("1111222233334444", "12/23", 234, 100, 100);
     }
 
     @Test
@@ -39,5 +39,10 @@ public class CreditCardTest {
     public void canPay() {
         creditCard.pay(25);
         assertEquals(75, creditCard.getBalance());
+    }
+
+    @Test
+    public void canGetCombinedBalance(){
+        assertEquals(200, creditCard.getCombinedBalance());
     }
 }

@@ -8,7 +8,7 @@ public class DebitCardTest {
 
     @Before
     public void before() {
-        debitCard = new DebitCard("1111222233334444", 909090, 12345678, "12/23", 234, 100);
+        debitCard = new DebitCard("1111222233334444", 909090, 12345678, "12/23", 234, 100, 100);
     }
 
     @Test

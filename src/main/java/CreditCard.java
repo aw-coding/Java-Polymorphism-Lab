@@ -3,12 +3,16 @@ public class CreditCard implements IScan, IPay{
     private String expiryDate;
     private int securityNumber;
     private int balance;
+    private int overDraftLimit;
+    private int combinedBalance;
 
-    public CreditCard(String cardNumber, String expiryDate, int securityNumber, int balance) {
+    public CreditCard(String cardNumber, String expiryDate, int securityNumber, int balance, int overDraftLimit) {
         this.cardNumber = cardNumber;
         this.expiryDate = expiryDate;
         this.securityNumber = securityNumber;
         this.balance = balance;
+        this.overDraftLimit = overDraftLimit;
+        this.combinedBalance = balance + overDraftLimit;
     }
 
     public String getCardNumber() {
@@ -33,5 +37,9 @@ public class CreditCard implements IScan, IPay{
 
     public int pay(int fee) {
        return this.balance -= fee;
+    }
+
+    public int getCombinedBalance() {
+        return this.balance + this.overDraftLimit;
     }
 }
